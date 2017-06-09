@@ -74,7 +74,6 @@ target_link_libraries(scram-gui
 
 install(TARGETS scram-gui
   RUNTIME DESTINATION bin
-  BUNDLE DESTINATION "${SCRAM_BUNDLE_LOCATION}"
   COMPONENT gui
   )
 
@@ -133,7 +132,7 @@ if(PACKAGE)
       include(BundleUtilities)
       set(BU_CHMOD_BUNDLE_ITEMS ON)
       fixup_bundle(\"${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/scram-gui.exe\" \"${QT_PLUGINS}\" \"${Qt_BIN_DIR};${QT_LIBRARY_DIR};${QT_BINARY_DIR}\")
-      " COMPONENT gui)
+      " COMPONENT runtime)
   endif()
 endif()
 
